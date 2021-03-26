@@ -350,6 +350,91 @@
 
   </div>
 
+<h1>Listas</h1>
+<ul>
+  <li *ngFor="let item of elementos"> 
+    <a (click)="mostrar(item)" >{{item.titulo}}</a>
+  </li>
+  
+</ul>
+<hr>
+
+<ul>
+  <li *ngFor="let item of elementos; index as ind; first as primero; last as ultimo; odd as par; even as impar"> 
+    {{item.titulo}}, {{item.autor}} - entrada número: {{ind}}
+    <span *ngIf=" ind == 5 ">Destacado</span>
+    <span *ngIf=" ultimo ">Este es el último elemento</span>
+    <span *ngIf=" primero ">Este es el primer elemento</span>
+    <span *ngIf=" par " [ngStyle]="{'background':color ? color:'blue'}">Este elemento es par</span>
+    <span *ngIf=" impar " [ngStyle]="{'background':color ? color:'gray'}">Este elemento es impar</span>
+  </li>
+  
+</ul>
+<hr>
+<ul>
+  <li *ngFor="let item of libros"> {{item.titulo}}, {{item.autor}}</li>
+</ul>
+
+  <h1>Estilos</h1>
+
+  <div class="cuadrado" [ngStyle]="{'background':color ? color:'peru'}"></div>
+
+  <button (click)="color='red'" [ngClass]="{'activo':color=='red'}">Rojo </button>
+  <hr>
+  <button (click)="color='green'" [ngClass]="color" >Verde</button>
+
+  <hr>
+  <hr>
+
+<div>
+  <div [ngSwitch]="diasemana">
+    <p class="item" *ngSwitchCase ="'lunes'">Tomar cafe y empezar muy bien la semana</p>
+    <p class="item" *ngSwitchCase ="'martes'">Continuar con toda, no te cases ni te enbarques</p>
+    <p class="item" *ngSwitchCase ="'miercoles'">Ya es la mitad de la semana laboral, vamos con toda</p>
+    <p class="item" *ngSwitchCase ="'jueves'">Se acerca el fin de semana, no se puede perder el enfoque en el objetivo semanal</p>
+    <p class="item" *ngSwitchCase ="'viernes'">El dia termna con celebración por el deber cumplido en la semana</p>
+    <p class="item" *ngSwitchCase ="'sabado'">Deporte y cuidado personal</p>
+    <p class="item" *ngSwitchCase ="'domingo'">Descanso y recreación</p>
+    <p class="item" *ngSwitchDefault>elige el dia de la semana que quieres conocer</p>
+  </div>
+</div>
+
+<input type="text" [(ngModel)] ="diasemana">
+
+
+<div class = "contenedor">
+  <div *ngIf="valor1">
+    <h1>Texto 1</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin est sed nulla aliquet tristique. Pellentesque auctor nibh eget pharetra dapibus. Morbi commodo nisl sit amet luctus varius. Nam nisi eros, suscipit eu mattis non, varius eget quam. Sed ipsum magna, dapibus et finibus sit amet, feugiat non lectus. Nam mi ante, rutrum vitae cursus quis, sodales in sapien. Vestibulum aliquam mollis diam, id pharetra mi dictum nec. Nunc ex ex, maximus vitae volutpat non, consectetur nec nisi. Donec et neque sapien. Aenean mollis sapien mi, sit amet laoreet tortor fermentum eget.
+    </p>
+  </div>
+
+  <div *ngIf="valor2 else otro">
+    <h1>Texto 2</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sollicitudin est sed nulla aliquet tristique. Pellentesque auctor nibh eget pharetra dapibus. Morbi commodo nisl sit amet luctus varius. Nam nisi eros, suscipit eu mattis non, varius eget quam. Sed ipsum magna, dapibus et finibus sit amet, feugiat non lectus. Nam mi ante, rutrum vitae cursus quis, sodales in sapien. Vestibulum aliquam mollis diam, id pharetra mi dictum nec. Nunc ex ex, maximus vitae volutpat non, consectetur nec nisi. Donec et neque sapien. Aenean mollis sapien mi, sit amet laoreet tortor fermentum eget.
+    </p>
+  </div>
+  <ng-template #otro>
+    <h1>otro texto</h1>
+    <p>Holas este es el otro texto</p>
+  </ng-template>
+  <button (click) = "valor1 = !valor1">boton1</button>
+  <button (click) = "valor2 = !valor2">boton2</button>
+  <p>Valor1: {{valor1}}</p>
+  <p>Valor2: {{valor2}}</p>
+</div>
+
+  <app-colores></app-colores>
+  <app-colores></app-colores>
+  <app-colores></app-colores>
+  <app-colores></app-colores>
+  <app-colores></app-colores>
+  <app-colores></app-colores>
+  <app-colores></app-colores>
+
+
   <!-- Resources -->
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>

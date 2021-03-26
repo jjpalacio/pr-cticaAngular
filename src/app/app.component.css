@@ -1,0 +1,44 @@
+.item {
+    background-color: black;
+    color: white;
+    width: 100%;
+    border-radius: 0px;
+}
+
+.cuadrado {
+    display: black;
+    margin: 20px;
+    height: 150px;
+    width: 150px;
+    border: solid 1px silver;
+    background: #ccc;
+}
+
+.activo {
+    color:yellow;
+    background:#03A9F5;
+    font-weight: bold;
+}
+
+.green {
+    border-bottom: 10px solid greenyellow;
+}
+
+.red {
+    border-bottom: 10px solid rebeccapurple;
+}
+
+li {
+    list-style-type:none;
+    font-size: 20px;
+    padding: 10px 0;
+}
+
+span{
+    color: #fff;
+    background: red;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 4px 8px;
+    letter-spacing: 2px;
+}
