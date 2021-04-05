@@ -1,0 +1,10 @@
+<h1>Listas</h1>
+<div class="container">
+    <ul>
+    <li *ngFor="let item of elementos"> 
+        <a [routerLink]="['/Detalles',item.id]" >{{item.titulo}}</a>
+    </li>
+    
+    </ul>
+    <hr>
+</div>
