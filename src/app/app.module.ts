@@ -16,6 +16,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { Error404Component } from './error404/error404.component';
 import { DetallesComponent } from './detalles/detalles.component';
 
+import { LibrosSeleccionadosService } from './libros-seleccionados.service';
+
 const rutasApp:Routes = [
   {path: 'lista-libros', component: ListaDeLibrosComponent },
   {path: 'Acerca-de', component: AcercaDeComponent },
@@ -44,7 +46,7 @@ const rutasApp:Routes = [
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LibrosSeleccionadosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

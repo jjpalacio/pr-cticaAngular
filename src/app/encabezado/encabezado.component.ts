@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { LibrosSeleccionadosService } from '../libros-seleccionados.service';
+
 @Component({
   selector: 'app-encabezado',
   templateUrl: './encabezado.component.html',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncabezadoComponent implements OnInit {
 
-  constructor() { }
+  mostrarLista:boolean=false;
+
+  constructor(public librorecibidodelista: LibrosSeleccionadosService) { 
+    
+  }
 
   ngOnInit(): void {
   }

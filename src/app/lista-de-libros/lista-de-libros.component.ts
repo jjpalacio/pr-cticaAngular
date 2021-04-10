@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { LibrosSeleccionadosService } from '../libros-seleccionados.service';
+
 
 @Component({
   selector: 'app-lista-de-libros',
@@ -12,7 +14,7 @@ export class ListaDeLibrosComponent implements OnInit {
   elementos:Array<any>;
   
 
-  constructor( ){
+  constructor(public librosseleccionados: LibrosSeleccionadosService ){
     this.libros = [
       {id:'1', titulo:'El libro tibetano de la vida y la muerte', autor:'pranapana'},
       {id:'2', titulo:'El libro tibetano de la vida y la ', autor:'pranapana1'},
@@ -37,6 +39,10 @@ export class ListaDeLibrosComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+
+  agregarLibro(libro:any){
+    this.librosseleccionados.agregraLibros(libro);
   }
 
 }
